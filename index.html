@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>爱子婧</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<br />
+				<br />
+		
+
+				<div class="keyword">&nbsp;&nbsp;我们从高中相识，大一大二相互熟悉。我虽然对你产生情愫，但是一直不敢主动。失去了很多机会，出国后的几年，我更加珍惜你的美好。你的美不仅给了我暖暖，还给了我勇气。我永远不能忘记那个夜晚，我和你告白，你发表情回应。我人生的美好便开始了</div><br />
+				<div class="keyword">&nbsp;&nbsp;虽然身处异地，但是我相信经历过这些我们的爱情定会君为磐石，妾为蒲苇，磐石无转移，蒲苇韧如丝！虽然有时候我们会吵架，会烦恼，但当我们在伦敦，在旧金山的甜蜜时刻让我久久不能忘记。虽然我有时候懒惰，有时候会逃避问题，但我爱你的真心不变，我愿意为你做出任何改变，让自己变成你喜欢的样子。自上次吵架后，决定答应你的都可以做到，便决定每天花两小时去做这个网站，。相信中间的计时器,将永远继续下去,直至数据溢出。</div>
+				
+				
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						亲爱的子婧，我们已经在一起了
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当阳光照在海面上,我就想到你;<br>当朦胧月光洒在泉水里,我思念你.
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		var imgs =["background-login01.jpg", "background-login02.jpg"];       
+        function time(){
+              let i = Math.floor(Math.random()*100);
+              /// document.getElementById("div_first").src ="../Images/"+imgs[i]; 
+            document.getElementById("div_first").src = "../Images/a" + i + ".png";
+             
+        }setInterval("time()",5000); 
+
+
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2019, 4, 1);
+		together.setHours(10);
+		together.setMinutes(12);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+
+
+			
+		}
+	</script>
+</body>
+</html>
