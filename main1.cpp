@@ -1,5 +1,6 @@
 #include "glslprogram.h"
 
+
 #define NVIDIA_SHADER_BINARY    0x00008e21        // nvidia binary enum
 
 struct GLshadertype
@@ -409,7 +410,8 @@ void
 GLSLProgram::DispatchCompute( GLuint num_groups_x, GLuint num_groups_y, GLuint num_groups_z )
 {
     Use( );
-    glDispatchCompute( num_groups_x, num_groups_y, num_groups_z );
+    //    glDispatchCompute( num_groups_x, num_groups_y, num_groups_z );
+    DispatchCompute( num_groups_x, num_groups_y, num_groups_z );
 }
 
 
@@ -888,3 +890,4 @@ GLSLProgram::SetAttributeVariable( char *name, VertexBufferObject& vb, GLenum wh
         \n\
         \n"
     };
+
